@@ -17,16 +17,16 @@ pipeline {
        {
            steps{
              parallel (
-		        	  Unit Test : { bat 'mvn clean test' },
-		        	  Functional Test : { bat 'mvn clean verify' }
+		        	  "Unit Test" : { bat 'mvn clean test' },
+		        	  "Functional Test" : { bat 'mvn clean verify' }
 			    )
         }
 		}
          stage('Artifacts')
          {
-		       steps {
-             bat 'mvn package'
-          }
+		 steps {
+             		bat 'mvn package'
+          		}
 	    }
   }
 }
